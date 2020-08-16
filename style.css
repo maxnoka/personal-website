@@ -132,3 +132,7 @@ img {
 .blogpost-list-tags {
   float: left;
 }
+
+.tag-link {
+  text-decoration: none;
+}

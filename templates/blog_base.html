@@ -9,7 +9,11 @@
         <ul class="blog-tags">
             <?php 
             foreach($blog_post->tags as $tag) {
-                echo '<li class="muted-text hover-unmute"> #' . $tag . '</li>';
+                ?>
+                <li class="muted-text hover-unmute">
+                    <a class="tag-link" href="blog.php?search_tag=<?php echo $tag; ?>"> <?php echo '#' . $tag; ?> </a>
+                </li>
+                <?php
             }
             ?>
         </ul>

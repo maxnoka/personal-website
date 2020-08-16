@@ -1,9 +1,24 @@
 <div id="main">
   <article class="blogpost-overview"> 
-    <h1> All Blog Posts </h1>
+    <h1> 
+        All Blog Posts 
+        <?php 
+        if ($this->blog->search_tag){
+            echo '( #' . $this->blog->search_tag . ' )';
+        }
+        ?>
+    </h1>
     <ul class="blogpost-list">
         <?php
-        foreach(array_reverse($this->blog->all_blog_posts) as $key => $blog_post) {
+        $blog_posts_to_show = array();
+        if ($this->blog->search_tag) {
+            $blog_posts_to_show = $this->blog->get_posts_with_tag($this->blog->search_tag);
+        }
+        else {
+            $blog_posts_to_show = $this->blog->all_blog_posts;
+        }
+        
+        foreach(array_reverse($blog_posts_to_show) as $key => $blog_post) {
             ?>
             <li>
                 <div class="blogpost-list-title">
@@ -16,7 +31,11 @@
                         <ul class="blog-tags">
                             <?php 
                             foreach($blog_post->tags as $tag) {
-                                echo '<li class="muted-text hover-unmute"> #' . $tag . '</li>';
+                                ?>
+                                <li class="muted-text hover-unmute">
+                                    <a class="tag-link" href="blog.php?search_tag=<?php echo $tag; ?>"> <?php echo '#' . $tag; ?> </a>
+                                </li>
+                                <?php
                             }
                             ?>
                         </ul>
@@ -27,5 +46,11 @@
             <?php
         }
         ?>
+    </ul>
+    <?php if ($this->blog->search_tag) {
+        ?>
+        <div> <a class="all-posts-link" href="blog.php?show_all_posts"> Show All Posts </a>
+        <?php
+    } ?>
   </article>
 </div>
