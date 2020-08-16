@@ -23,6 +23,14 @@ img {
   max-width: 100%;
 }
 
+.muted-text {
+  opacity: 0.5;
+}
+
+.hover-unmute:hover {
+  opacity:  1;
+}
+
 .react-app {
   max-width: 50em;
   margin: auto;
@@ -58,4 +66,69 @@ img {
 #sidebar > ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+.blog-navigation {
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-navigation > a {
+  width: 30%;
+}
+
+.next-post-link {
+  text-align: left;
+}
+
+.all-posts-link {
+  text-align: center;
+}
+.previous-post-link {
+  text-align: right;
+}
+
+.blog-title {
+  margin-bottom: 0;
+}
+
+.blog-meta {
+  display: flex;
+}
+
+.blog-date {
+  margin-right: 20px;
+}
+
+.blog-tags {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog-tags > li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.blogpost-list > li {
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: space-between;
+}
+
+.blogpost-list-title {
+  flex: 15em;
+}
+
+.blogpost-list-meta {
+  flex: 20em;
+}
+
+.blogpost-list-date {
+  float: right;
+}
+
+.blogpost-list-tags {
+  float: left;
 }

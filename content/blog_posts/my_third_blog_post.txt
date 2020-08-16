@@ -1,0 +1,6 @@
+---
+##	Title	My Third Blog Post
+##	Date	15/08/2020
+##	Tags	tag1
+---
+<p>A more special post.</p>

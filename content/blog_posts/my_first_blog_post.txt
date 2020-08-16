@@ -1,0 +1,8 @@
+---
+##	Title	My first Blog Post
+##	Date	14/08/2020
+##	Tags	tag1 tag2
+---
+<p>The text goes here now.</p>
+
+<p>I should be able to put in html, like <a href='#'>this</a>.</p>

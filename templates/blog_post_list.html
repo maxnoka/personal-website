@@ -1,0 +1,31 @@
+<div id="main">
+  <article class="blogpost-overview"> 
+    <h1> All Blog Posts </h1>
+    <ul class="blogpost-list">
+        <?php
+        foreach(array_reverse($this->blog->all_blog_posts) as $key => $blog_post) {
+            ?>
+            <li>
+                <div class="blogpost-list-title">
+                    <a href="blog.php?post_no=<?php echo count($this->all_blog_posts_names) - 1 - $count; ?>">
+                        <?php echo $blog_post->title ?>
+                    </a>
+                </div>
+                <div class="blogpost-list-meta">
+                    <div class="blogpost-list-tags">
+                        <ul class="blog-tags">
+                            <?php 
+                            foreach($blog_post->tags as $tag) {
+                                echo '<li class="muted-text hover-unmute"> #' . $tag . '</li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="blogpost-list-date"> <?php echo $blog_post->date ?> </div>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+  </article>
+</div>
