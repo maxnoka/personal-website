@@ -1,12 +1,12 @@
 <div id="main">
   <article class="blogpost"> 
     <?php
-    $blog_post = $this->blog->get_current_blog_post();
-    echo '<h1 class="blog-title">' . $blog_post->title . '</h1>';
+    $blog_post = $this->blog->get_current_item();
+    echo '<h1 class="blogpost-title">' . $blog_post->title . '</h1>';
     ?>
-    <div class="blog-meta">
-        <div class="blog-date muted-text"><?php echo $blog_post->date; ?></div>
-        <ul class="blog-tags">
+    <div class="blogpost-meta-container">
+        <div class="blogpost-date muted-text"><?php echo $blog_post->date; ?></div>
+        <ul class="blogpost-tags">
             <?php 
             foreach($blog_post->tags as $tag) {
                 ?>
@@ -18,13 +18,14 @@
             ?>
         </ul>
     </div>
-    <?php
-    echo $blog_post->content;
+    <div class="blogpost-content">
+        <?php echo $blog_post->content; ?>
+    </div>
 
-    echo '<div class="blog-navigation">';
+    <?php echo '<div class="blog-navigation">';
         if ($this->blog->previous_post_exists()) {
             ?>
-            <a class="next-post-link" href="blog.php?post_no=<?php echo $this->blog->current_blog_post_index - 1; ?>"> Previous Post</a>
+            <a class="next-post-link" href="blog.php?post_no=<?php echo $this->blog->current_content_item_idx - 1; ?>"> Previous Post</a>
             <?php
         }
         else {
@@ -35,7 +36,7 @@
         
         if ($this->blog->next_post_exists()) {
             ?>
-            <a class="previous-post-link" href="blog.php?post_no=<?php echo $this->blog->current_blog_post_index + 1; ?>"> Next Post</a>
+            <a class="previous-post-link" href="blog.php?post_no=<?php echo $this->blog->current_content_item_idx + 1; ?>"> Next Post</a>
             <?php
         }
         else {
