@@ -1,0 +1,72 @@
+/* Blogpost flex-boxes etc
+<----- blogpost-meta-container ------>
+<- blogpost-date -><- blogpost-tags -> */
+
+.blogpost-title {
+  margin-bottom: 0;
+}
+
+.blogpost-meta-container { /* Contains date and tag list */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.blogpost-meta-container > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blogpost-date {
+  margin-right: 1em;
+}
+
+.blogpost-tags > li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.tag-link {
+  text-decoration: none;
+}
+
+/* Navigation flex box:
+<------------------------ blog-navigation --------------------->
+<- previous-post-link -><- all-posts-link -><- next-post-link -> */
+
+.blog-navigation {
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-navigation > a {
+  width: 30%;
+}
+
+.next-post-link {
+  text-align: left;
+}
+
+.all-posts-link {
+  text-align: center;
+}
+.previous-post-link {
+  text-align: right;
+}
+
+/* Blogpost List */
+
+.blogpost-list > li {
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  margin-bottom: 1em;
+  padding: .75rem 1.25rem;
+}
+
+.blogpost-list-title {
+  margin-bottom: 0.55em;
+}
+
+.blogpost-list-meta-container { /* Contains date and tag list on seperate lines */
+  margin-left: 1em;
+}
