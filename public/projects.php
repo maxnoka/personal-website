@@ -14,10 +14,14 @@ if ($project_name == NULL) {
   $view->title = 'All Projects';
 }
 else {
-
   $view = new MyView($additional_styles = array("projects.css"), $content_file = NULL, $sub_template = 'project_base.html');
-  $projects_list->change_current_item_by_name($project_name);
-  $view->title = 'Projects: ' . $project_name;
+  if ($projects_list->change_current_item_by_name($project_name) == True) {
+  	$view->title = 'Projects: ' . $project_name;
+  }
+  else {
+  	$view = new MyView($additional_styles = array("projects.css"), $content_file = NULL, $sub_template = 'project_list.html');
+  	$view->title = 'All Projects';
+  }
 }
 
 $view->search_tag = $search_tag;

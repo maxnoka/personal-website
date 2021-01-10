@@ -46,6 +46,9 @@ abstract class ContentManagementClass {
     $content_items_names = explode("\n", $txt_file);
 
     foreach ($content_items_names as $content_item_name) {
+      if ($content_item_name == '') {
+        continue;
+      }
       $new_content_item = $this->construct_content_item($content_item_name);
       
       // now make sure the derived class returns an object that has tags
@@ -64,11 +67,10 @@ abstract class ContentManagementClass {
   public function get_index_by_name($target_item_name) {
     if ($this->check_valid_item_name($target_item_name)) {
       return array_search($target_item_name, array_keys($this->content_items));
+      return true;
     }
     else {
-      echo 'Content not found';
-      return 0;
-
+      return false; //Content not found
     }
   }
 
@@ -86,9 +88,10 @@ abstract class ContentManagementClass {
   public function change_current_item_by_index($target_item_index) {
     if ($this->check_valid_item_index($target_item_index)) {
       $this->current_content_item_idx = $target_item_index;
+      return true;
     }
     else {
-      echo 'Content not found';
+      return false; //Content not found
     }
   }
 
@@ -99,9 +102,10 @@ abstract class ContentManagementClass {
   public function change_current_item_by_name($target_item_name) {
     if ($this->check_valid_item_name($target_item_name)) {
       $this->current_content_item_idx = array_search($target_item_name, array_keys($this->content_items));
+      return true;
     }
     else {
-      echo 'Content not found';
+      return false; //Content not found
     }
   }
 

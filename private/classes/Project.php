@@ -12,6 +12,8 @@ class Project {
   public $tags = NULL;
   public $intro = NULL;
   public $detailed = NULL;
+  public $codeLink = NULL;
+  public $executionLink = NULL;
 
   public function __construct($projects_folder, $project_file) {
     list($meta_data, $project_intro, $project_detailed) = $this->parse_project_file($projects_folder . $project_file);
@@ -21,13 +23,19 @@ class Project {
     $this->title = $meta_data['Title'];
     $this->status = $meta_data['Status'];
     $this->tags = $meta_data['Tags'];
+    if (array_key_exists('Code', $meta_data)) {
+      $this->codeLink = $meta_data['Code'];
+    }
+    if (array_key_exists('Execution', $meta_data)) {
+      $this->executionLink = $meta_data['Execution'];
+    }
 
     $this->intro = $project_intro;
     $this->detailed = $project_detailed;
   }
 
   private function parse_project_file($blog_post_file) {
-    $txt_file = file_get_contents($blog_post_file);
+    $txt_file = file_get_contents($blog_post_file . ".txt");
 
     $rows = explode("---", $txt_file);
     

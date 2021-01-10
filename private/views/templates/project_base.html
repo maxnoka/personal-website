@@ -3,6 +3,8 @@
     <?php
     $project = $this->projects_list->get_current_item();
     echo '<h1 class="project-title">' . $project->title . '</h1>';
+    if ($project->codeLink !== NULL) { echo ' [<a href="' . $project->codeLink . '">Code</a>]';}
+    if ($project->executionLink !== NULL) { echo ' [<a href="' . $project->executionLink . '">Demo</a>]';}
     ?>
     <div class="project-meta-container">
         <ul class="project-tags">

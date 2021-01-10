@@ -4,7 +4,7 @@
         All Blog Posts 
         <?php 
         if ($this->search_tag){
-            echo '( #' . $this->search_tag . ' )';
+            echo '( #' . htmlspecialchars(urldecode($this->search_tag)) . ' )';
         }
         ?>
     </h1>

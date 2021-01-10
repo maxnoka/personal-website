@@ -18,7 +18,12 @@ if ($show_all_posts == True || $search_tag !== NULL) {
 else { // i.e. show an individual post
 	$view = new MyView($additional_styles = array("blog.css"), $content_file = NULL, $sub_template = 'blog_base.html');
 	if ( $post_no !==  NULL) {
-      $blog->change_current_item_by_index($post_no);
+      if ($blog->change_current_item_by_index($post_no) == False) {
+      	// didn't find the post
+      	// TODO add content not found page
+      	$view = new MyView($additional_styles = array("blog.css"), $content_file = NULL, $sub_template = 'blog_post_list.html');
+      	$view->search_tag = $search_tag;
+      };
     }
 }
 

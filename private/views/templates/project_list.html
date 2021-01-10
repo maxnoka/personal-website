@@ -23,14 +23,17 @@
             <li>
                 <div class="project-list-header">
                     <a href="projects.php?project_name=<?php echo $project->project_file; ?>"> <?php echo $project->title; ?></a>
-                    (<?php echo $project->status ?>)
+                    <?php
+                    if ($project->codeLink !== NULL) { echo ' [<a class="muted-text hover-unmute tag-link" href="' . $project->codeLink . '">Code</a>]';}
+                    if ($project->executionLink !== NULL) { echo ' [<a class="muted-text hover-unmute tag-link" href="' . $project->executionLink . '">Demo</a>]';}
+                    ?>
                     <div class="project-list-meta">
                         <ul class="tags-list">
                             <?php 
                             foreach($project->tags as $tag) {
                                 ?>
                                 <li class="muted-text hover-unmute">
-                                    <a class="tag-link" href="projects.php?search_tag=<?php echo $tag; ?>"> <?php echo '#' . $tag; ?> </a>
+                                    <a class="tag-link" href="projects.php?search_tag=<?php echo urlencode($tag); ?>"> <?php echo '#' . $tag; ?> </a>
                                 </li>
                                 <?php
                             }
