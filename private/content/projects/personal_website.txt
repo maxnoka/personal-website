@@ -1,0 +1,9 @@
+--- Meta
+##	Title	Personal Website
+##	Status	Active
+##	Tags	web-dev programming
+--- Intro
+<p>A responsive personal website written (at the moment) in vanilla PHP. 
+Includes a database-less content management system for serving a blog and showcasing personal projects.</p>
+--- Detailed
+<p></p>

@@ -1,0 +1,55 @@
+<div id="main">
+  <article class="projects-overview"> 
+    <h1> 
+        All Projects 
+        <?php 
+        if ($this->search_tag){
+            echo '(#' . $this->search_tag . ')';
+        }
+        ?>
+    </h1>
+    <ul class="project-list">
+        <?php
+        $projects_to_show = array();
+        if ($this->search_tag) {
+            $projects_to_show = $this->projects_list->get_items_by_tag($this->search_tag);
+        }
+        else {
+            $projects_to_show = $this->projects_list->content_items;
+        }
+        
+        foreach($projects_to_show as $key => $project) {
+            ?>
+            <li>
+                <div class="project-list-header">
+                    <a href="projects.php?project_name=<?php echo $project->project_file; ?>"> <?php echo $project->title; ?></a>
+                    (<?php echo $project->status ?>)
+                    <div class="project-list-meta">
+                        <ul class="tags-list">
+                            <?php 
+                            foreach($project->tags as $tag) {
+                                ?>
+                                <li class="muted-text hover-unmute">
+                                    <a class="tag-link" href="projects.php?search_tag=<?php echo $tag; ?>"> <?php echo '#' . $tag; ?> </a>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="projects-intro">
+                    <?php echo $project->intro ?>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+    <?php if ($this->search_tag) {
+        ?>
+        <div> <a class="all-projects-link" href="projects.php?show_all_projects"> Show All Projects </a>
+        <?php
+    } ?>
+  </article>
+</div>

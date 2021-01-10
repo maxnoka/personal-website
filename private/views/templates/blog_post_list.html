@@ -1,0 +1,58 @@
+<div id="main">
+  <article id="blog-overview"> 
+    <h1> 
+        All Blog Posts 
+        <?php 
+        if ($this->search_tag){
+            echo '( #' . $this->search_tag . ' )';
+        }
+        ?>
+    </h1>
+    <ul class="blogpost-list">
+        <?php
+        $blog_posts_to_show = array();
+        if ($this->search_tag) {
+            $blog_posts_to_show = $this->blog->get_items_by_tag($this->search_tag);
+        }
+        else {
+            $blog_posts_to_show = $this->blog->content_items;
+        }
+        
+        foreach(array_reverse($blog_posts_to_show) as $blog_name => $blog_post) {
+            ?>
+            <li>
+                    <div class="blogpost-list-title">
+                        <a href="blog.php?post_no=<?php echo $this->blog->get_index_by_name($blog_name); ?>"><?php echo $blog_post->title ?></a>
+                    </div>
+                <div class="blogpost-list-meta-container">
+                    <div class="blogpost-list-date">Posted on <?php echo $blog_post->date ?> </div>
+                    <div class="blogpost-list-tags">
+                        <ul class="blogpost-tags">
+                            <?php 
+                            foreach($blog_post->tags as $tag) {
+                                ?>
+                                <li class="muted-text hover-unmute">
+                                    <a class="tag-link" href="blog.php?search_tag=<?php echo $tag; ?>"> <?php echo '#' . $tag; ?> </a>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+    <?php if ($this->search_tag) {
+    echo '<div class="blog-navigation">';
+        echo '<a></a>';
+        echo '<a class="all-posts-link" href="blog.php?show_all_posts"> Show All Posts </a>';
+        echo '<a></a>';
+
+    echo '</div>';
+    }
+    ?>
+  </article>
+</div>

@@ -1,0 +1,25 @@
+<div id="main">
+  <div class="project"> 
+    <?php
+    $project = $this->projects_list->get_current_item();
+    echo '<h1 class="project-title">' . $project->title . '</h1>';
+    ?>
+    <div class="project-meta-container">
+        <ul class="project-tags">
+            <?php 
+            foreach($project->tags as $tag) {
+                ?>
+                <li class="muted-text hover-unmute">
+                    <a class="tag-link" href="projects.php?search_tag=<?php echo $tag; ?>"> <?php echo '#' . $tag; ?> </a>
+                </li>
+                <?php
+            }
+            ?>
+        </ul>
+    </div>
+    <div class="project-content">
+        <?php echo $project->detailed; ?>
+    </div>
+    <a class="all-projects-link" href="projects.php?show_all_projects"> Show All Projects </a>
+  </div>
+</div>
