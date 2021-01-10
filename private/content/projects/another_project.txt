@@ -1,8 +1,0 @@
---- Meta
-##	Title	Project 2
-##	Status	Inactive
-##	Tags	web-dev programming more-things another-one
---- Intro
-<p> This project is me programming a personal website </p>
---- Detailed
-<p> This is a more detailed explanation of why and how I did it </p>
