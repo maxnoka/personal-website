@@ -1,3 +1,1 @@
-my_first_blog_post.txt
-my_second_blog_post.txt
-my_third_blog_post.txt
+why_you_should_build_your_personal_website_yourself.txt

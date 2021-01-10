@@ -1,0 +1,65 @@
+--- Meta
+##	Title	Why You Should Build Your Personal Website Yourself
+##	Date	14/08/2020
+##	Tags	programming personal-projects personal-website web-dev
+--- Post
+<p>I have no idea. But let me tell you why I did. If you care more about the
+how rater than the why, see the project page 
+<a href="./projects.php?project_name=personal_website.txt">here</a> 
+for more of the technical details.</p>
+
+<h2>The Backdrop</h2>
+<p>I'm not really that interested in web-development. 
+More of a systems programming kind of guy. 
+But I needed a personal website.</p>
+
+<p>As I was in the process of applying for development jobs, 
+I felt almost naked without a public space beyond GitHub to show off 
+some of my programming related projects and interests.</p> 
+
+<h2>Why DIY</h2>
+<p>GitHub-Pages might be a thing, and as a long-time podcast listener, 
+I am of course not ignorant of Squarespace. 
+With the above said, these might seem like attractive options.<p>
+
+<p>However, as a self-respecting technology-affine person, 
+it just did not felt right to use a website builder with a 
+drag-and-drop system. I don't mean to disparage anyone who 
+chooses that route. In fact, I feel a bit like a dad who insists 
+on repairing his car himself.</p>
+
+<p>I have that same feeling of wanting to 'do it yourself' about a 
+lot of technology. I think many others share it, and that it has 
+to do with a desire to understand a system from the ground up. 
+This is also why I chose to begin with a completely vanilla 
+PHP-based website, rather than working with a framework like 
+Laravel or React.</p>
+
+<p>With the complexity of technology, you have to choose your battles
+ though (the more I think of it, this blog is my war-log).</p>
+
+<h2>Why then a Website</h3>
+<p>Everything in life comes at opportunity-cost, so why spend 
+any time on web-dev in particular? Here were my top three reasons:</p>
+
+<h3>Web-dev is Important</h3>
+<p>So much so that I want to understand at least a bit of how 
+web-pages are built. Also, it seems as though platforms 
+like Node.js and frameworks like React are ever-increasing 
+in relevance. It's just fun to be at least a bit involved.</p>
+
+<h3>Accessibility</h3>
+<p>Documentation for the markup and styling 
+(shoutout MDN - here's to hoping it will remain as good 
+moving forward) and the scripting languages 
+(I worked with PHP, JQuery, React) has been very good. 
+Also being able to look at the client-side source for any 
+website you like is a plus. Finally, you can also see the 
+results instantly. At this level of programming, it's possible 
+to explore and play, which has been positively fun.</p>
+
+<h3>Flexibility</h3>
+<p>Templates are nice, but a blank slate is nicer sometimes. 
+This is a rant for another day, but I REALLY hate the 
+'Web 3.0 look' ("bootstrappy", single-page scrolling experience, 
+etc. etc.) which dominate the website builders.</p> 

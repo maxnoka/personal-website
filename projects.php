@@ -10,16 +10,18 @@ $projects_list = new ProjectsList();
 
 if ($project_name == NULL) {
   $view = new MyView($additional_styles = array("projects.css"), $content_file = NULL, $sub_template = 'project_list.html');
+  $view->title = 'All Projects';
 }
 else {
 
   $view = new MyView($additional_styles = array("projects.css"), $content_file = NULL, $sub_template = 'project_base.html');
   $projects_list->change_current_item_by_name($project_name);
+  $view->title = 'Projects: ' . $project_name;
 }
 
 $view->search_tag = $search_tag;
 $view->projects_list = $projects_list;
 
-$view->title = 'About Me';
+
 $view->render();
 ?>

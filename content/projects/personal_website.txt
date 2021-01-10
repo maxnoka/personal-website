@@ -3,6 +3,7 @@
 ##	Status	Active
 ##	Tags	web-dev programming
 --- Intro
-<p> This project is me programming a personal website </p>
+<p>A responsive personal website written (at the moment) in vanilla PHP. 
+Includes a database-less content management system for serving a blog and showcasing personal projects.</p>
 --- Detailed
-<p> This is a more detailed explanation of why and how I did it </p>
+<p></p>
