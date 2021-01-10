@@ -1,0 +1,3 @@
+[submodule "private/personal-website-content"]
+	path = private/personal-website-content
+	url = https://github.com/maxnoka/personal-website-content.git

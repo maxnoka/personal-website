@@ -10,7 +10,7 @@ if (DEBUG_ENABLED) {
 define( "VIEW_PATH", __DIR__ . "/../views" );
 define( "TEMPLATE_PATH", VIEW_PATH . "/templates" );
 define( "CLASS_PATH", __DIR__ . "/../classes" );
-define( "CONTENT_PATH", __DIR__ . "/../content" );
+define( "CONTENT_PATH", __DIR__ . "/../personal-website-content" );
 
 // public - also used in templates
 define( "STYLE_PATH",  "styles" );
