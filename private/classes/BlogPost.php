@@ -1,5 +1,7 @@
 <?php
 
+require '../vendor/autoload.php';
+
 /**
  * 
  * Class to handle blog posts
@@ -29,7 +31,9 @@ class BlogPost {
     
     $meta_data_lines = explode("\n", $rows[1]);
     $meta_data_lines = array_slice($meta_data_lines, 1, 3);
-    $blog_content = $this->remove_first_and_last_line($rows[2]); 
+
+    $Parsedown = new Parsedown();
+    $blog_content = $Parsedown->text($this->remove_first_and_last_line($rows[2]));
 
     $meta_data = $this->parse_meta_data($meta_data_lines);
 
@@ -39,7 +43,7 @@ class BlogPost {
   private function remove_first_and_last_line($string) {
     $lines = explode("\n", $string);
     $cut_lines = array_slice($lines, 1, -1);
-    return implode($cut_lines);
+    return implode("\n", $cut_lines);
   }
 
   private function parse_meta_data($meta_data_lines) {

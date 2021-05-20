@@ -43,6 +43,12 @@
   font-size: 1em;
 }
 
+.blogpost-content > ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  margin-top: 0;
+}
+
 /* Navigation flex box:
 <------------------------ blog-navigation --------------------->
 <- previous-post-link -><- all-posts-link -><- next-post-link -> */
