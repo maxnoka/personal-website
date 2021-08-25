@@ -35,7 +35,7 @@ class Project {
   }
 
   private function parse_project_file($blog_post_file) {
-    $txt_file = file_get_contents($blog_post_file . ".txt");
+    $txt_file = file_get_contents(trim($blog_post_file) . ".txt");
 
     $rows = explode("---", $txt_file);
     
